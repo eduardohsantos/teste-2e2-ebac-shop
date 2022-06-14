@@ -1,12 +1,15 @@
 /// <reference types="cypress" />
-let dadosLogin
+const perfil = require('../fixtures/perfil.json')
+var faker = require('faker');
 
-context('Funcionalidade Login', () => {
-    before(() => {
-        cy.fixture('perfil').then(perfil => {
-            dadosLogin = perfil
-        })
-    });
+describe('Funcionalidade Login', () => {
+    /*  Como cliente 
+        Quero acessar a Loja EBAC 
+        Para fazer um pedido de 4 produtos 
+        Fazendo a escolha dos produtos
+        Adicionando ao carrinho
+        Preenchendo todas opções no checkout
+        E validando minha compra ao final */
 
     beforeEach(() => {
         cy.visit('minha-conta')
@@ -16,23 +19,22 @@ context('Funcionalidade Login', () => {
         cy.screenshot()
     });
 
-    it('Login com sucesso usando Comando customizado', () => {
-        cy.login(dadosLogin.usuario, dadosLogin.senha)
-        cy.get('.page-title').should('contain', 'Minha conta')
-    });
+    it('Deve fazer login com sucesso - Usando fixture', () => {
+        cy.fixture('perfil').then(dados => {
+            cy.get('#username').type(dados.usuario)
+            cy.get('#password').type(dados.senha, {log:false})
+            cy.get('.woocommerce-form > .button').click()
 
-    it('Login usando fixture', () => {
-        cy.fixture('perfil').then((dados) => {
-            cy.login(dados.usuario, dados.senha)
+            cy.get('.page-title').should('contain', 'Minha conta')
         })
-        cy.get('.page-title').should('contain', 'Minha conta')
     });
 
-    it('Deve fazer login com sucesso - sem otimização', () => {
-        cy.get('#username').type(dadosLogin.usuario)
-        cy.get('#password').type(dadosLogin.senha, { log: false })
-        cy.get('.woocommerce-form > .button').click()
-        cy.get('.page-title').should('contain', 'Minha conta')
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, aluno_ebac')
-    })
+    it('Deve completar o pré cadastro com sucesso usando faker', () => {
+        let emailFaker2 = faker.internet.email()
+        let nomeFaker2 = faker.name.firstName()
+        let sobrenomeFaker2 = faker.name.lastName()
+
+        cy.preCadastro(emailFaker2, 'senha!@#forte', nomeFaker2, sobrenomeFaker2)
+        cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
+    });
 })

@@ -8,21 +8,21 @@
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
     "cy:dashboard": "",
-    "cy:report": ""
+    "cy:report": "cypress run --record --key f15844c7-b311-491a-a006-19807f39ba5d"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/eduardohsantos/teste-ebac-ui.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/eduardohsantos/teste-ebac-ui/issues"
   },
   "homepage": "",
   "devDependencies": {
-    "cypress": "^8.2.0"
+    "cypress": "^9.7.0"
   },
   "dependencies": {
     "faker": "^5.5.3"
