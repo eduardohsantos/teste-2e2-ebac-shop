@@ -19,4 +19,5 @@ class EnderecoPage {
         cy.get(':nth-child(2) > .button').click()
     }
 }
+
 export default new EnderecoPage()

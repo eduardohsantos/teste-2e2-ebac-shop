@@ -40,6 +40,7 @@ Cypress.Commands.add('preCadastro', (nomeFaker, sobrenomeFaker, email, senha, ) 
     cy.get('#password_1').type(senha,{log: false})
     cy.get('#password_2').type(senha, {log: false})
 
+
     cy.get('.woocommerce-Button').click()
 });
 
