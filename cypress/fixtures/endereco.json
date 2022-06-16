@@ -1,0 +1,41 @@
+[
+    {
+        "nome": "Amélia",
+        "sobrenome": "Lorena",
+        "empresa": "Açai da Esquina",
+        "endereco": "Av Indepedencia",
+        "numero": "48",
+        "pais": "Brasil",
+        "cidade": "Piracicaba",
+        "estado": "São Paulo",
+        "cep": "17273921",
+        "telefone": "015992587100",
+        "email": "teste@teste.com"
+    },
+    {
+        "nome": "Joaquim",
+        "sobrenome": "Silva",
+        "empresa": "Amazon",
+        "endereco": "Av. Treze de Agosto",
+        "numero": "780",
+        "pais": "Brasil",
+        "cidade": "Jundiai",
+        "estado": "São Paulo",
+        "cep": "13275123",
+        "telefone": "011983374951",
+        "email": "teste@teste.com.br"
+    },
+    {
+        "nome": "Raimundo",
+        "sobrenome": "Lonato",
+        "empresa": "Globo",
+        "endereco": "Rua do Estado",
+        "numero": "7548",
+        "pais": "Brasil",
+        "cidade": "Sorocaba",
+        "estado": "São Paulo",
+        "cep": "13275789",
+        "telefone": "015991193769",
+        "email": "teste@teste.com"
+    }
+]
